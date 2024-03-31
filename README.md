@@ -20,7 +20,7 @@ The data utilized in this study is downloaded from https://wiki.cancerimagingarc
 Full image size and the cropped area per 598 by 598 pixels are plotted as below.
 
 <div style="text-align: center;">
-  <img width="970" alt="image" src="https://github.com/lingliao/Transparency-in-CABCDTD/assets/91222367/52f740c2-392d-4e88-9b7f-86202e8590f0">
+  <img width="970" alt="image" src="https://github.com/lingliao/Transparency-in-CABCDTD/assets/91222367/b191aeb1-d923-43bb-965c-58ac206a0d2c">
 </div>
 
 ## Methods
