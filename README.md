@@ -17,6 +17,11 @@ In this study, a case study was conducted utilizing the mass subset from CBIS-DD
 
 ## Dataset Availability
 The data utilized in this study is downloaded from https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=22516629#2251662935562334b1e043a3a0512554ef512cad
+Full image size and the cropped area per 598 by 598 pixels are plotted as below.
+
+<div style="text-align: center;">
+  <img width="970" alt="image" src="https://github.com/lingliao/Transparency-in-CABCDTD/assets/91222367/52f740c2-392d-4e88-9b7f-86202e8590f0">
+</div>
 
 ## Methods
 In general, our methods include: 1) converting DICOM to PNG format without altering bit depth, 2) mapping ROIs to corresponding full images to identify and crop abnormal areas while ensuring size congruence, 3) confirming sufficient crop size coverage for most abnormal regions, 4) appending cropped images to the desired 598 × 598 pixels with centered abnormal areas and removal of unwanted backgrounds, 5) performing data augmentation for enhanced diversity, 6) processing and splitting images into training, validation, and testing sets for model development, 7) optimizing computational efficient Xception network for model development, and 8) assessing effectiveness using multiple matrices and visualizations.
