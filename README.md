@@ -43,7 +43,7 @@ Steps to run the code we provided for model development:
 Steps to run the code for Figure 1B and 1C:
 1. make sure you run the first 5 steps of the above lists
 2. full_image_size&cropped_area.py
-3. R_visualization
+3. R_visualization.R
 
 ## Results
 The model's performance evaluation is based on the checkpoint with the highest validation accuracy.
