@@ -4,7 +4,7 @@ Ling Liao
 
 M.S., Precision Medicine and Healthcare, Tsinghua University
 
-PHD student, Division of Biology and Biomedical Sciences, Washington University in St. Louis
+PHD student, Computational and Systems Biology, Washington University in St. Louis
 
 Founder, Biomedical Deep Learning LLC
 
@@ -33,7 +33,7 @@ Steps to run the code we provided for model development:
 8. model_development_and_evaluation.py
 
 Steps to run the code for Figure 1B and 1C:
-1. make sure run the first 5 steps in above lists
+1. make sure you run the first 5 steps of the above lists
 2. full_image_size&cropped_area.py
 3. R_visualization
 
