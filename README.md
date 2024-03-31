@@ -48,7 +48,7 @@ Steps to run the code for Figure 1B and 1C:
 ## Results
 The model's performance evaluation is based on the checkpoint with the highest validation accuracy.
 
-Accuracy, precision, recall, F1 score, and a confusion matrix are outlined in below:
+Accuracy, precision, recall, F1 score, ROC curve, and a confusion matrix are outlined in below:
 
 
 
