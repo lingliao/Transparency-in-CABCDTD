@@ -17,10 +17,11 @@ In this study, a case study was conducted utilizing the mass subset from CBIS-DD
 
 ## Dataset Availability
 The data utilized in this study is downloaded from https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=22516629#2251662935562334b1e043a3a0512554ef512cad
+
 Full image size and the cropped area per 598 by 598 pixels are plotted as below.
 
 <div style="text-align: center;">
-  <img width="970" alt="image" src="https://github.com/lingliao/Transparency-in-CABCDTD/assets/91222367/b191aeb1-d923-43bb-965c-58ac206a0d2c">
+  <img width="900" alt="image" src="https://github.com/lingliao/Transparency-in-CABCDTD/assets/91222367/b191aeb1-d923-43bb-965c-58ac206a0d2c">
 </div>
 
 ## Methods
