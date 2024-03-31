@@ -8,7 +8,7 @@ PHD student, Computational and Systems Biology, Washington University in St. Lou
 
 Founder, Biomedical Deep Learning LLC
 
-Our methodology outlined in this case study demonstrated robust performance in classifying benign and malignant breast mammography images, achieving an AUROC of 86.3% [95% CI: 0.842, 0.885] using the CBIS-DDSM mass dataset. Additionally, we provided all the code we employed for the entire process, spanning from data preprocessing to model evaluation. As the old saying goes, the devil is in the details. A complete and annotated codebase is essential for guaranteeing the reproducibility, transparency, effectiveness, and overall reliability of our model, thereby further advancing research communication and improvement in this field.
+Our methodology outlines in this case study demonstrated robust performance in classifying benign and malignant breast mammography images, achieving an AUROC of 86.3% [95% CI: 0.842, 0.885] using the CBIS-DDSM mass dataset. Additionally, we provide all the code we employed for the entire process, spanning from data preprocessing to model evaluation. As the old saying goes, the devil is in the details. A complete and annotated codebase is essential for guaranteeing the reproducibility, transparency, effectiveness, and overall reliability of our model, thereby further advancing research communication and improvement in this field.
 
 Here is the overview of the application of the CBIS-DDSM mass subset for breast cancer diagnosis:
 
@@ -46,6 +46,10 @@ Steps to run the code for Figure 1B and 1C:
 3. R_visualization
 
 ## Results
+The model's performance evaluation is based on the checkpoint with the highest validation accuracy.
+Accuracy, precision, recall, F1 score, and a confusion matrix are outlined in below:
+
+
 
 <div style="text-align: center;">
   <img width="970" alt="image" src="https://github.com/lingliao/Transparency-in-CABCDTD/assets/91222367/447270ad-168a-4e0f-8a6a-eb9ad52fc4ba">
