@@ -58,4 +58,4 @@ Accuracy, precision, recall, F1 score, ROC curve, and a confusion matrix are out
 
 
 ## Example output
-Example output are saved in folder example_output
+Example outputs are saved in folder example_output
