@@ -426,7 +426,7 @@ annotations = [f"{conf_matrix[i, j]:d}\n({conf_matrix_percent_row[i, j]:.2f}%)" 
 annotations = np.array(annotations).reshape(conf_matrix.shape[0], conf_matrix.shape[1])
 
 # Define custom color palette with starting color #6da9ed and ending color #eb6a4d
-#colors = sns.diverging_palette(100, 5, s=80, l=60, as_cmap=True)  # 起始颜色为 #6da9ed，结束颜色为 #eb6a4d
+#colors = sns.diverging_palette(100, 5, s=80, l=60, as_cmap=True)
 colors = sns.diverging_palette(80, 5, s=70, l=80, as_cmap=True)
 
 
