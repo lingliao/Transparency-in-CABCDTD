@@ -2,7 +2,7 @@
 # Plot the full image size and cropped area per 598 by 598 pixels #
 ###################################################################
 
-#install the package and load the library
+# Install the package and load the library
 install.packages("tidyverse")
 library(tidyverse)
 
@@ -20,7 +20,7 @@ df_processed <- df %>%
     TRUE ~ as.character(pathology)  # 如果没有匹配到上述条件，保持不变
   ))
 
-  # Calculate the total number of dots
+# Calculate the total number of dots
 total_dots <- nrow(df_processed)
 # Format the total_dots with commas every 1000
 formatted_total_dots <- format(total_dots, big.mark = ",")
@@ -89,7 +89,7 @@ summary_stats <- roi_processed %>%
     q3 = quantile(area_percentage, 0.75)
   )
 
-  # Calculate summary statistics
+# Calculate summary statistics
 summary_stats <- roi_processed %>%
   group_by(pathology_processed) %>%
   summarise(
@@ -134,10 +134,3 @@ ROI_area <- ggplot(roi_processed, aes(x = pathology_processed, y = area_percenta
 
 # Save the plot as a PDF with specified dimensions and resolution
 ggsave("Cropped_area.pdf", ROI_area, width = 6.27, height = 5.7, dpi = 1000)
-
-
-
-
-
-
-
