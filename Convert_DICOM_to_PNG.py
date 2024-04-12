@@ -7,7 +7,7 @@
 #We decided to use Subject ID(patientID, left or right breast, image view) to name the converted images and track the corresponding pathology information.
 #One image might have multiple ROIs. It was important to add different suffixes, prefixes, etc., while keeping the Subject ID the same before saving the converted images to avoid missing any of them.
 
-#install pydicom
+#install pydicom if needed
 !pip install pydicom
 #load modules
 import os
@@ -75,7 +75,7 @@ print("Number of pathylogy roi:", pathology_roi)
 print("Number of pathylogy full:", pathology_full)
 
 ##Round 2
-#We tested for "image file path" only, feel free to try others columns as well.
+#We tested for "image file path" only, feel free to try other columns as well.
 
 # Identify duplicate 'image file path' values
 merged_df['name'] = merged_df['image file path'].str.split('/').str[0]
