@@ -2,10 +2,9 @@
 # Check the size between ROI and full image to determine whether there are any mismatch or not  #
 # If YES, resize the ROI size to the corresponding full image size                              #
 # Map ROI to the full image                                                                     #
-# Please adjust the root folder as your need                                                    #
 #################################################################################################
 
-#load modules
+# Load modules
 import os
 import re
 import pandas as pd
@@ -15,20 +14,7 @@ from PIL import Image
 # Extract the image names of ROI and full images #
 ##################################################
 
-# Specify the paths of the two folders to compare
-folder1_path = "/content/roi_train_needed"
-folder2_path = "/content/full_train_needed"
-
-# Extract data from both folders and convert them to dataframe
-data_in_folder1 = extract_names_from_folder(folder1_path)
-data_in_folder2 = extract_names_from_folder(folder2_path)
-df_folder1 = pd.DataFrame(data_in_folder1)
-df_folder2 = pd.DataFrame(data_in_folder2)
-
-# Merge the DataFrames on the 'name' column to find common names
-common_data_df = pd.merge(df_folder1, df_folder2, on='name', suffixes=('_ROI', '_Full'), how='left')
-
-#define the function for the extraction
+# Define the function for the extraction
 def extract_names_from_folder(folder_path):
     # Get the list of files in the folder
     files = os.listdir(folder_path)
@@ -53,13 +39,25 @@ def extract_names_from_folder(folder_path):
 
     return extracted_data
 
+# Specify the paths of the two folders to compare, feel free to edit the directory
+folder1_path = "/content/roi_train_needed"
+folder2_path = "/content/full_train_needed"
 
+# Extract data from both folders and convert them to dataframe
+data_in_folder1 = extract_names_from_folder(folder1_path)
+data_in_folder2 = extract_names_from_folder(folder2_path)
+df_folder1 = pd.DataFrame(data_in_folder1)
+df_folder2 = pd.DataFrame(data_in_folder2)
+
+# Merge the DataFrames on the 'name' column to find common names
+common_data_df = pd.merge(df_folder1, df_folder2, on='name', suffixes=('_ROI', '_Full'), how='left')
 
 ##########################################################################
 # Check if there is any size mismatch between ROI and full images or not #
 ##########################################################################
 
-mismated_info = []  # List to store information about mismated images
+# List to store information about mismated images
+mismated_info = []
 
 for index, row in common_data_df.iterrows():
     roi_path = row['path_ROI']
@@ -108,7 +106,6 @@ for index, row in common_data_df.iterrows():
 
     for i in range(len(datas)):
         item = datas[i]
-        # If pixel's grayscale value is greater than 125, set it to transparent
         if item[0] == 255:
             new_data.append((255, 255, 255, 0))  # Set white pixels to transparent
         else:
@@ -124,10 +121,10 @@ for index, row in common_data_df.iterrows():
     else:
         mask_size = full_image.size
 
-    # set the mask position
+    # Set the mask position
     mask_position = (0, 0)  # Top-left corner
 
-    # apply the ROI image as a mask to the full image.
+    # Apply the ROI image as a mask to the full image.
     full_image.paste(roi_image, mask_position, roi_image)
 
     # Prepare the save path with the corresponding number of underscores
