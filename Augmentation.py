@@ -2,7 +2,7 @@
 # Image augmentation #
 ######################
 
-#load the modules
+# Load modules
 import os
 import cv2
 import numpy as np
