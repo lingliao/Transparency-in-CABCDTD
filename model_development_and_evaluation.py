@@ -65,6 +65,20 @@ for index, row in dicom_data.iterrows():
 #remove the missing rows
 df.dropna(subset=['pathology'], inplace=True)
 
+# Save the df to a CSV file as all.csv
+df.to_csv('all.csv', index=False)
+
+##################################
+# Label the pathology information #
+##################################
+
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+# Map labels to binary values
+label_mapping = {'BENIGN': 0, 'BENIGN_WITHOUT_CALLBACK': 0, 'MALIGNANT': 1}
+df['label'] = df['pathology'].map(label_mapping)
+
 ###################
 # Build the model #
 ###################
@@ -141,17 +155,6 @@ model = CustomModel()
 
 # Print model summary
 print(model)
-
-##################################
-# Label the pathology information #
-##################################
-
-import pandas as pd
-from sklearn.preprocessing import LabelEncoder
-
-# Map labels to binary values
-label_mapping = {'BENIGN': 0, 'BENIGN_WITHOUT_CALLBACK': 0, 'MALIGNANT': 1}
-df['label'] = df['pathology'].map(label_mapping)
 
 ##########################
 # Image data processing  #
