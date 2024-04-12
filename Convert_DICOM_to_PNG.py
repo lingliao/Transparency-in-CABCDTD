@@ -4,12 +4,13 @@
 # Please adjust the root folder as your need     #
 ##################################################
 
-#We decided to use Subject ID(patientID, left or right breast, image view) to name the converted images and track the corresponding pathology information.
-#One image might have multiple ROIs. It was important to add different suffixes, prefixes, etc., while keeping the Subject ID the same before saving the converted images to avoid missing any of them.
+# Make sure to replace any placeholders or paths with the actual paths or values specific to your environment
+# We decided to use Subject ID(patientID, left or right breast and image view) to name the converted images and track the corresponding pathology information.
+# One full image might have multiple ROIs. It was important to add different suffixes, prefixes, etc., while keeping the Subject ID the same while saving the converted images.
 
-#install pydicom if needed
+# Install pydicom if needed
 !pip install pydicom
-#load modules
+# Load modules
 import os
 import cv2
 import shutil
@@ -20,42 +21,43 @@ import pydicom
 from PIL import Image
 import pandas as pd
 
-
-#connect with google drive
+# Load the images
+# Connect with google drive, feel free to delete this part if you didn't use google drive to save your downloaded images
+# Connect with Google Drive
+# Assuming you have already mounted Google Drive in your environment
 drive.mount('/content/drive')
 
-#unzip the downloaded images
-!unzip /content/drive/MyDrive/CBIS-DDSM/roi_crop_train.zip #adjust based on the image type
+# Unzip the downloaded images
+# Replace this with the correct path to your zip file
+!unzip /content/drive/MyDrive/CBIS-DDSM/roi_crop_train.zip
 
-
-#read in the description csv files
+# Read in the description csv files
 train = pd.read_csv('/content/drive/MyDrive/CBIS-DDSM/mass_case_description_train_set.csv')
 test = pd.read_csv('/content/drive/MyDrive/CBIS-DDSM/mass_case_description_test_set.csv')
 
-#extract the columns we are interested in
+# Extract the columns we are interested in
 train_need = train[['patient_id', 'pathology', 'image file path', 'cropped image file path', 'ROI mask file path']]
 test_need = test[['patient_id', 'pathology', 'image file path', 'cropped image file path','ROI mask file path']]
 
-# merge them together and reindex the output dataframe
+# Merge them together and reindex the output dataframe
 merged_df = pd.concat([train_need, test_need], axis=0)
 merged_df.reset_index(drop=True, inplace=True)
 
-#extract the name information we need: patientID, left or right breast, and so on.
+# Extract the name information we need: patientID, left or right breast, and so on.
 merged_df['crop_-1'] = merged_df['cropped image file path'].apply(lambda x: x.split('/')[0])
 merged_df['ROI_-1'] = merged_df['ROI mask file path'].apply(lambda x: x.split('/')[0])
 merged_df['full_-1'] = merged_df['image file path'].apply(lambda x: x.split('/')[0])
-
 
 ###########################################################################
 # Confirm whether "SubjectID" was a suitable choice for naming the images #
 ###########################################################################
 
-##Round 1
+## Round 1
 # Check if items in column1 and column2 of the same row are the same
 merged_df['same_items'] = merged_df['crop_-1'] == merged_df['ROI_-1']
 merged_df['full_same_items'] = merged_df['full_-1'].isin(merged_df['crop_-1'])
 
-#check if items in column A share the same pathology info or not when the items are same.
+#Check if items in column A share the same pathology info or not when the items are same.
 merged_df['pathology_crop'] = merged_df['pathology'][merged_df['crop_-1'].duplicated(keep=False)].duplicated(keep=False)
 merged_df['pathology_roi'] = merged_df['pathology'][merged_df['ROI_-1'].duplicated(keep=False)].duplicated(keep=False)
 merged_df['pathology_full'] = merged_df['pathology'][merged_df['full_-1'].duplicated(keep=False)].duplicated(keep=False)
@@ -74,8 +76,8 @@ print("Number of pathology crop:", pathology_crop)
 print("Number of pathylogy roi:", pathology_roi)
 print("Number of pathylogy full:", pathology_full)
 
-##Round 2
-#We tested for "image file path" only, feel free to try other columns as well.
+## Round 2
+# We tested for "image file path" only, feel free to try other columns if interested in.
 
 # Identify duplicate 'image file path' values
 merged_df['name'] = merged_df['image file path'].str.split('/').str[0]
@@ -97,23 +99,12 @@ for name, group in unique_df.groupby('name'):
 filtered_df.reset_index(drop=True, inplace=True)
 print(len(filtered_df))
 
-
-
 ##############################################################
 # Convert DICOM to PNG and save output to destination folder #
 ##############################################################
 
-
-# Specify the source folder and destination folder, make sure they exist
-source_folder = "/content/mass_train_ROI/manifest-LyDgOQGl3853937313152078328/CBIS-DDSM"
-destination_root = "/content/roi_train"
-
-# Convert DICOM files to PNG and get the total number of failed conversions and DataFrame
-# The function will return the number of failed conversions and the paths of the images before and after conversion as well
-full_failed, full_df = convert_dcm_to_png(source_folder, destination_root) 
-
-#Fonction for the conversion
-#make sure you choose the right pixel value, 16 bit for full images, 8 bits for the remaining
+# Fonction for the conversion
+# Make sure you choose the right pixel value, 16 bit for full images, 8 bits for the remaining
 def convert_dcm_to_png(source_folder, destination_root):
 
     # Initialize a counter for failed conversions
@@ -192,14 +183,19 @@ def convert_dcm_to_png(source_folder, destination_root):
         'png_part': png_parts
     })
 
+# Specify the source folder and destination folder, make sure they exist
+source_folder = "/content/mass_train_ROI/manifest-LyDgOQGl3853937313152078328/CBIS-DDSM"
+destination_root = "/content/roi_train"
+
+# Call the functon to convert DICOM files to PNG and get the total number of failed conversions and DataFrame
+# The function will return the number of failed conversions and the paths of the images before and after conversion as well
+full_failed, full_df = convert_dcm_to_png(source_folder, destination_root) 
 
 ############################################
 # Move the converted images to one folder  #
 ############################################
 
-# Call the function to move images
-move_images(root_dir, dest_dir)
-
+# Function to move images
 def move_images(root_dir, dest_dir):
     # Walk through the directory structure
     for foldername, _, filenames in os.walk(root_dir):
@@ -220,10 +216,5 @@ def move_images(root_dir, dest_dir):
 root_dir = "/content/roi_train"
 dest_dir = "/content/roi_train_needed"
 
-
-
-
-
-
-
-
+# Call the function to move images
+move_images(root_dir, dest_dir)
