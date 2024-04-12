@@ -1,21 +1,23 @@
 ######################
 # Remove white edges #
 ######################
-#We manually reviewed all cropped images and filtered out the 18 images which contained unwanted white edges
+# We manually reviewed all cropped images and filtered out the 18 images which contained unwanted white edges
+# It shall be conveninent/quick if we choose to view all the images under Gallery view
+# We then applied below code to remove the white edges
 
-#load modules
+# Load modules
 import os
 from PIL import Image
 
-# define the source and destinaation folder
+# Define the source and destinaation folder
 source_folder = '/content/white_edge'
 destination_folder = '/content/adjusted/'
 
-# create the destination folder if not existed
+# Create the destination folder if not existed
 if not os.path.exists(destination_folder):
     os.makedirs(destination_folder)
 
-# iterate all images inside a folder
+# Iterate all images inside a folder
 for filename in os.listdir(source_folder):
     if filename.endswith('.png'):
         file_path = os.path.join(source_folder, filename)
