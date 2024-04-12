@@ -1,15 +1,15 @@
 ####################################
-# model development and evaluation #
+# Model development and evaluation #
 ####################################
 
 ################################
-# image load and visualization #
+# Image load and visualization #
 ################################
 
-#install packages/hubs/ others needed
+# Install packages/hubs/ others needed
 pip install pydicom
 
-#load modules
+# Load modules
 import os
 import pydicom
 from PIL import Image
@@ -28,10 +28,10 @@ from keras.utils import to_categorical
 from concurrent.futures import ThreadPoolExecutor
 from glob import glob
 
-#read in the pathology info
+# Read in the pathology info
 dicom_data = pd.read_csv('all_mass_pathology.csv')
 
-#read in the image path info
+# Read in the image path info
 # Specify the root path where the .png files are located
 jpg_root_path = 'all_598_augmented'
 
@@ -51,30 +51,29 @@ jpg_paths = get_jpg_file_paths(jpg_root_path)
 df = pd.DataFrame({'File_Paths': jpg_paths})
 
 # Extracting the information from the file paths and matching with dicom_data
-
 df['ID1'] = df['File_Paths'].apply(lambda x: x.split('/')[-1] if len(x.split('/')) > 1 else '')
 dicom_data['ID1'] = dicom_data['image file path'].apply(lambda x: x.split('/')[-4] if len(x.split('/')) > 1 else '')
+
 # Assuming unique_df and jpg_paths_df are your DataFrames
 for index, row in dicom_data.iterrows():
     # Check if 'image_file_path_first_part' is in 'image_file_path' of jpg_paths_df
     mask = df['ID1'].str.contains(row['ID1'])
-
     # If there is a match, update 'pathology' in jpg_paths_df
     df.loc[mask, 'pathology'] = row['pathology']
     # df.loc[mask, 'full_image_name'] = row['image_file_path_first_part']
 
+#remove the missing rows
 df.dropna(subset=['pathology'], inplace=True)
 
 ###################
-# build the model #
+# Build the model #
 ###################
 
-#install tensorflow-hub and timm
+# Install tensorflow-hub and timm
 pip install tensorflow-hub
 pip install timm
 
-
-# model structure
+# Model structure
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -144,7 +143,7 @@ model = CustomModel()
 print(model)
 
 ##################################
-#label the pathology information #
+# Label the pathology information #
 ##################################
 
 import pandas as pd
@@ -154,9 +153,9 @@ from sklearn.preprocessing import LabelEncoder
 label_mapping = {'BENIGN': 0, 'BENIGN_WITHOUT_CALLBACK': 0, 'MALIGNANT': 1}
 df['label'] = df['pathology'].map(label_mapping)
 
-#########################
-#image data processing  #
-#########################
+##########################
+# Image data processing  #
+##########################
 
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader
@@ -188,7 +187,7 @@ transform = transforms.Compose([
 
 ])
 
-#training, validation, and test spliting
+# Training, validation, and test spliting
 
 from sklearn.model_selection import train_test_split
 
@@ -293,15 +292,14 @@ for epoch in range(num_epochs):
         torch.save(model.state_dict(), checkpoint_name)
         print(f"Checkpoint saved: {checkpoint_name}")
 
-###################
-#model evaluation #
-###################
+####################
+# Model evaluation #
+####################
 
 ######################
-#1. calculate the accuracy, precision, recall, AUROC, and F1 score
+#1. Calculate the accuracy, precision, recall, AUROC, and F1 score
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, roc_curve, auc
-import matplotlib.pyplot as plt
 
 # # Assuming you have defined your device as 'cuda' if available, else 'cpu'
 # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -311,9 +309,6 @@ model.load_state_dict(torch.load('model_epoch_32.pth'))
 
 # Set the model to evaluation mode
 model.eval()
-
-# Send the model to the same device as the input data
-# model.to(device)
 
 # Lists to store true labels and predicted probabilities
 true_labels = []
@@ -356,8 +351,6 @@ print(f"F1 Score: {f1:.4f}")
 
 ######################
 #2. calculate 95 CI%
-
-import numpy as np
 
 # Define the number of iterations for bootstrap
 n_iterations = 1000  # Can be adjusted as needed
@@ -410,7 +403,6 @@ print(f"95% CI for ROC AUC (Bootstrap): {roc_auc_ci_bootstrap}")
 
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
-import matplotlib.pyplot as plt
 
 # Calculate confusion matrix
 conf_matrix = confusion_matrix(true_labels, predicted_labels)
@@ -444,13 +436,10 @@ plt.yticks(ticks=[0.5, 1.5], labels=["Benign", "Malignant"])
 plt.savefig('confusion_matrix.pdf', dpi=1000)
 plt.show()
 
-
 ######################
 #4. plot ROC curve
 
 from sklearn.metrics import roc_curve, auc
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 # Plot ROC curve
 fpr, tpr, thresholds = roc_curve(true_labels, predicted_probs)
@@ -473,16 +462,4 @@ plt.legend(loc="lower right")
 # Save the plot as PDF with 1000dpi
 plt.savefig('roc_curve.pdf', dpi=1000)
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
 
