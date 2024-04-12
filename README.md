@@ -59,3 +59,6 @@ Accuracy, precision, recall, F1 score, ROC curve, and a confusion matrix are out
 
 ## Example output
 Example outputs are saved in folder example_output
+
+## Identified images with unwanted white edges
+Thoese cropped images are stored in folder image_with_white_edge
