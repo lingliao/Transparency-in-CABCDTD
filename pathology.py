@@ -2,26 +2,26 @@
 # Save the pathology information
 ###################################
 
-#load module
+# Load module
 import pandas as pd
 import re
 
-#read in the description data
+# Read in the description data
 train = pd.read_csv('/content/drive/MyDrive/CBIS-DDSM/mass_case_description_train_set.csv')
 test = pd.read_csv('/content/drive/MyDrive/CBIS-DDSM/mass_case_description_test_set.csv')
 
-#extract columns we need
+# Extract columns we need
 train_need = train[['patient_id', 'pathology', 'image file path', 'cropped image file path', 'ROI mask file path']]
 test_need = test[['patient_id', 'pathology', 'image file path', 'cropped image file path','ROI mask file path']]
 
-#merge and reindex the dataframe
+# Merge and reindex the dataframe
 merged_df = pd.concat([train_need, test_need], axis=0)
 merged_df.reset_index(drop=True, inplace=True)
 
-#extract the names
+# Extract the names
 merged_df['crop_name'] = merged_df['cropped image file path'].apply(lambda x: x.split('/')[0])
 merged_df['ROI_name'] = merged_df['ROI mask file path'].apply(lambda x: x.split('/')[0])
 merged_df['full_name'] = merged_df['image file path'].apply(lambda x: x.split('/')[0])
 
-#save the output
+# Save the output
 merged_df.to_csv('all_mass_pathology.csv', index=False)
