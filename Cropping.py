@@ -2,12 +2,9 @@
 # Crop 598 by 598 pixel area #
 ##############################
 
-#load modules
+# Load modules
 import os
 from PIL import Image
-
-# call the function for cropping
-extract_center_for_folder("/content/train_same_size", "/content/train_598", 598)
 
 #define the function to find the geometric center
 def find_nonzero_center(img):
@@ -65,3 +62,7 @@ def extract_center_for_folder(input_folder, output_folder, output_size):
             # save the cropped image
             cropped_img.save(output_path)
             print(f"Processed {filename}")
+
+# Call the function for cropping
+# Adjust the input directory and the destination directory to suit your need
+extract_center_for_folder("/content/train_same_size", "/content/train_598", 598)
