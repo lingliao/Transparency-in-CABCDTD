@@ -35,7 +35,7 @@ dicom_data = pd.read_csv('all_mass_pathology.csv')
 # Specify the root path where the .png files are located
 jpg_root_path = 'all_598_augmented'
 
-# Function to get all .jpg file paths in a directory
+# Function to get all .png file paths in a directory
 def get_jpg_file_paths(directory):
     jpg_paths = []
     for root, dirs, files in os.walk(directory):
@@ -44,7 +44,7 @@ def get_jpg_file_paths(directory):
                 jpg_paths.append(os.path.join(root, file))
     return jpg_paths
 
-# Get all .jpg file paths under the specified directory
+# Get all .png file paths under the specified directory
 jpg_paths = get_jpg_file_paths(jpg_root_path)
 
 # Create a DataFrame with the file paths
@@ -68,9 +68,9 @@ df.dropna(subset=['pathology'], inplace=True)
 # Save the df to a CSV file as all.csv
 df.to_csv('all.csv', index=False)
 
-##################################
+###################################
 # Label the pathology information #
-##################################
+###################################
 
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
