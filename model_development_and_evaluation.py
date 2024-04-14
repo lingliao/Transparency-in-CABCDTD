@@ -112,7 +112,7 @@ class CustomModel(nn.Module):
             nn.BatchNorm2d(4),
             nn.LeakyReLU(0.1),
             nn.Conv2d(4, 3, kernel_size=1),
-            nn.BatchNorm2d(3), #this layer was recently added(after manuscript submission), which is really helpful.
+            #nn.BatchNorm2d(3), #this layer might be helpful.
             nn.LeakyReLU(0.1)
         )
         
