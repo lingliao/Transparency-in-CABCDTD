@@ -65,4 +65,4 @@ Example outputs are saved in folder example_output
 Those cropped images are stored in folder image_with_white_edge
 
 ## The processed images
-The processed and ready for model can be found [here](https://drive.google.com/file/d/1-l-IX4asVuwokRDvzOCYH5Hyj2_--Lx0/view?usp=sharing).
+The processed images, ready for the model, can be found [here](https://drive.google.com/file/d/1-l-IX4asVuwokRDvzOCYH5Hyj2_--Lx0/view?usp=sharing).
