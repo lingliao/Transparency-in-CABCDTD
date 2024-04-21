@@ -18,7 +18,7 @@ Here is the overview of the application of the CBIS-DDSM mass subset for breast 
 
 
 ## Dataset Availability
-The data utilized in this study is downloaded from [here]( https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=22516629#2251662935562334b1e043a3a0512554ef512cad)
+The data utilized in this study is downloaded from [here]( https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=22516629#2251662935562334b1e043a3a0512554ef512cad).
 
 Full image size and the cropped area per 598 by 598 pixels are plotted as below:
 
@@ -48,7 +48,7 @@ Steps to run the code for Figure 1B and 1C:
 ## Results
 The model's performance evaluation is based on the checkpoint with the highest validation accuracy.
 
-The best performed checkpoint can be downloaded from [here](https://drive.google.com/drive/folders/10NbIMP5a6PWkZ97Ta9lggAvla3XEh8oa?usp=drive_link)(Please note, this one performs a little better than the results presented in our publication in general, detailed in our example output, but we decided to respect our published version and didn't update further in the manuscript.)
+The best performed checkpoint can be downloaded from [here](https://drive.google.com/drive/folders/10NbIMP5a6PWkZ97Ta9lggAvla3XEh8oa?usp=drive_link)(Please note, this one performs a little better than the results presented in our publication in general, detailed in our example output, but we decided to respect our published version and didn't update further in the manuscript.).
 
 Accuracy, precision, recall, F1 score, ROC curve, and a confusion matrix are outlined in below:
 
