@@ -309,7 +309,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Load the best model state dictionary based on the validation accuracy
-model.load_state_dict(torch.load('model_epoch_32.pth'))
+model.load_state_dict(torch.load('model_epoch_32.pth')) # You will want to update this based on your training checkpoints' performances
 
 # Set the model to evaluation mode
 model.eval()
