@@ -48,7 +48,7 @@ Steps to run the code for Figure 1B and 1C:
 ## Results
 The model's performance evaluation is based on the checkpoint with the highest validation accuracy.
 
-The best performed checkpoint can be downloaded from [here](https://drive.google.com/drive/folders/10NbIMP5a6PWkZ97Ta9lggAvla3XEh8oa?usp=drive_link)(Please note, this one performs a little better than the results presented in our publication in general, detailed in our example output, but we decided to respect our published version and didn't update further in the manuscript.).
+The best performed checkpoint can be downloaded from [here](https://drive.google.com/file/d/1S09j6QK4hWzKoqHm7JI03hVflTDpVkhq/view?usp=sharing)(Please note, this one performs a little better than the results presented in our publication in general, detailed in our example output, but we decided to respect our published version and didn't update further in the manuscript.).
 
 Accuracy, precision, recall, F1 score, ROC curve, and a confusion matrix are outlined in below:
 
@@ -63,3 +63,6 @@ Example outputs are saved in folder example_output
 
 ## Identified images with unwanted white edges
 Those cropped images are stored in folder image_with_white_edge
+
+## The processed images
+The processed and ready for model can be found [here](https://drive.google.com/file/d/1-l-IX4asVuwokRDvzOCYH5Hyj2_--Lx0/view?usp=sharing).
