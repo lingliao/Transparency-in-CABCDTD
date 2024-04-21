@@ -1,6 +1,6 @@
 # Transparency in Computer-Aided Breast Cancer Diagnosis Tool Development: A CBIS-DDSM Case Study
 
-Ling Liao, 
+Ling Liao
 
 M.S., Precision Medicine and Healthcare, Tsinghua University
 
