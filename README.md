@@ -18,7 +18,7 @@ Here is the overview of the application of the CBIS-DDSM mass subset for breast 
 
 
 ## Dataset Availability
-The data utilized in this study is downloaded from https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=22516629#2251662935562334b1e043a3a0512554ef512cad
+The data utilized in this study is downloaded from [here]( https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=22516629#2251662935562334b1e043a3a0512554ef512cad)
 
 Full image size and the cropped area per 598 by 598 pixels are plotted as below:
 
