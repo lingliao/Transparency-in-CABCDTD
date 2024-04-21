@@ -10,7 +10,7 @@ Founder, Biomedical Deep Learning LLC
 
 ## Overview
 
-Our methodology outlined in this case study demonstrates robust performance in classifying benign and malignant breast mammography images, achieving an AUROC of 86.3% [95% CI: 0.842, 0.885] using the CBIS-DDSM mass dataset. We provide all the code we employed for the entire process, spanning from data preprocessing to model evaluation.
+Our methodology outlined in this case study demonstrates robust performance in classifying benign and malignant breast mammography images, achieving an AUROC of 86.3% [95% CI: 0.842, 0.885] using the CBIS-DDSM mass dataset. We further humbly provide all the code we employed for the entire process, spanning from data preprocessing to model evaluation.
 
 Below conatins the overview of the application of the CBIS-DDSM mass subset for breast cancer diagnosis:
 
