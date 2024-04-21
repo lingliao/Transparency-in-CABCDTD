@@ -79,6 +79,6 @@ mismated_test_image_info(original).csv,
 and
 mismated_train_image_info(original).csv.)
 
-## We appreciate you attention to this field. 
+## We appreciate you attention.
 
 **AI for IMPROVEMENT and for EVERYONE.**
