@@ -81,4 +81,4 @@ mismated_train_image_info(original).csv.)
 
 ## We appreciate you attention to this field. 
 
-AI for BETTER, and AI for ALL.
+**AI for BETTER, and AI for ALL.**
