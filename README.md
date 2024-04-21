@@ -70,10 +70,11 @@ Identified cropped images with unwanted white backgrounds are stored in folder i
 The processed images, ready for the model, can be found [here](https://drive.google.com/file/d/1-l-IX4asVuwokRDvzOCYH5Hyj2_--Lx0/view?usp=sharing).
 
 ## Others
-Other outputs that the author thinks might be helpful can be found under folder Others, including the calculated full image size, percentage per 598 by 598 areas for corpped images, pathology info, identified mismatch info in sizewize between ROI and full images.
+Other outputs that the authors think might be helpful can be found under folder Others, including the calculated full image size, percentage per 598 by 598 areas for corpped images, pathology info, identified mismatch info in sizewize between ROI and full images.
 
 (598_percentage_all.csv,
 all_mass_pathology.csv,
 heaght_width_FULL.csv,
 mismated_test_image_info(original).csv,
+and
 mismated_train_image_info(original).csv.)
