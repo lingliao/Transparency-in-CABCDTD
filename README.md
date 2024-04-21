@@ -64,7 +64,16 @@ Accuracy, precision, recall, F1 score, ROC curve, and a confusion matrix are out
 Our example outputs, including data processing, data visualization and model development and evaluation, are saved in folder example_output.
 
 ## Identified images with unwanted white edges
-Those cropped images are stored in folder image_with_white_edge.
+Identified cropped images with unwanted white backgrounds are stored in folder image_with_white_edge.
 
 ## The processed images
 The processed images, ready for the model, can be found [here](https://drive.google.com/file/d/1-l-IX4asVuwokRDvzOCYH5Hyj2_--Lx0/view?usp=sharing).
+
+## Others
+Ohter outputs that the author think might be helpful can be found under folder Others, including the calculated full image size, percentage per 598 by 598 areas for corpped images, pathology info, identified mismatch info in sizewize between ROI and full images.
+
+598_percentage_all.csv,
+all_mass_pathology.csv,
+heaght_width_FULL.csv,
+mismated_test_image_info(original).csv,
+mismated_train_image_info(original).csv.
