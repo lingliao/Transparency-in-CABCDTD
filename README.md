@@ -8,6 +8,7 @@ PHD student, Computational and Systems Biology, Washington University in St. Lou
 
 Founder, Biomedical Deep Learning LLC
 
+
 Our methodology outlined in this case study demonstrates robust performance in classifying benign and malignant breast mammography images, achieving an AUROC of 86.3% [95% CI: 0.842, 0.885] using the CBIS-DDSM mass dataset. Additionally, we provide all the code we employed for the entire process, spanning from data preprocessing to model evaluation. As the old saying goes, the devil is in the details. A complete and annotated codebase is essential for guaranteeing the reproducibility, transparency, effectiveness, and overall reliability of our model, thereby further advancing research communication and improvement in this field.
 
 Here is the overview of the application of the CBIS-DDSM mass subset for breast cancer diagnosis:
@@ -48,7 +49,7 @@ Steps to run the code for Figure 1B and 1C:
 ## Results
 The model's performance evaluation is based on the checkpoint with the highest validation accuracy.
 
-The best performed checkpoint can be downloaded from [here](https://drive.google.com/file/d/1S09j6QK4hWzKoqHm7JI03hVflTDpVkhq/view?usp=sharing)(Please note, this one performs a little better than the results presented in our publication in general, detailed in our example output, but we decided to respect our published version and didn't update further in the manuscript.).
+The best performed checkpoint can be downloaded from [here](https://drive.google.com/file/d/1S09j6QK4hWzKoqHm7JI03hVflTDpVkhq/view?usp=sharing)(Please note, this one performs a little better than the results presented in our publication in general, detailed in our folder example_output, but we decided to respect our published version and didn't update further in the manuscript.).
 
 Accuracy, precision, recall, F1 score, ROC curve, and a confusion matrix are outlined in below:
 
@@ -59,10 +60,10 @@ Accuracy, precision, recall, F1 score, ROC curve, and a confusion matrix are out
 
 
 ## Example output
-Our example outputs, including data processing, data visualization and model development and evaluation, are saved in folder example_output
+Our example outputs, including data processing, data visualization and model development and evaluation, are saved in folder example_output.
 
 ## Identified images with unwanted white edges
-Those cropped images are stored in folder image_with_white_edge
+Those cropped images are stored in folder image_with_white_edge.
 
 ## The processed images
 The processed images, ready for the model, can be found [here](https://drive.google.com/file/d/1-l-IX4asVuwokRDvzOCYH5Hyj2_--Lx0/view?usp=sharing).
