@@ -40,7 +40,7 @@ Steps to run the code we provided for model development:
 5. Size_adjustment.py
 6. Augmentation.py
 7. pathology.py
-8. model_development_and_evaluation.py
+8. model_development_and_evaluation.py (you will want to update the "model_epoch_32.pth" with your best trained results in the script)
 
 Steps to run the code for Figure 1B and 1C:
 1. make sure you run the first 5 steps of the above lists
