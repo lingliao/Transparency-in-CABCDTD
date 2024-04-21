@@ -78,3 +78,7 @@ heaght_width_FULL.csv,
 mismated_test_image_info(original).csv,
 and
 mismated_train_image_info(original).csv.)
+
+## We appreciate you attention to this field. 
+
+AI for BETTER, and AI for ALL.
