@@ -29,7 +29,7 @@ Full image size and the cropped area per 598 by 598 pixels are plotted as below:
 </div>
 
 ## Methods
-In general, our methods include: 1) converting DICOM to PNG format without altering bit depth, 2) mapping ROIs to corresponding full images to identify and crop abnormal areas while ensuring size congruence, 3) confirming sufficient crop size coverage for most abnormal regions, 4) appending cropped images to the desired 598 × 598 pixels with centered abnormal areas and removal of unwanted backgrounds, 5) performing data augmentation for enhanced diversity, 6) processing and splitting images into training, validation, and testing sets for model development, 7) optimizing computational efficient Xception network for model development, and 8) assessing effectiveness using multiple matrices and visualizations.
+In general, our methods include: 1) converting DICOM to PNG format without altering bit depth, 2) mapping ROIs to corresponding full images to identify and crop abnormal areas while ensuring size congruence, 3) confirming sufficient crop size coverage for most abnormal regions, 4) appending cropped images to the desired **598 × 598** pixels with centered abnormal areas and removal of unwanted backgrounds, 5) performing data augmentation for enhanced diversity, 6) processing and splitting images into training, validation, and testing sets for model development, 7) optimizing computational efficient Xception network for model development, and 8) assessing effectiveness using multiple matrices and visualizations.
 
 Steps to run the code we provided for model development:
 
@@ -48,6 +48,8 @@ Steps to run the code for Figure 1B and 1C:
 3. R_visualization.R
 
 ## Results
+The processed images, ready for the model, can be found [here](https://drive.google.com/file/d/1-l-IX4asVuwokRDvzOCYH5Hyj2_--Lx0/view?usp=sharing).
+
 The model's performance evaluation is based on the checkpoint with the highest validation accuracy.
 
 The best performed checkpoint can be downloaded from [here](https://drive.google.com/file/d/1S09j6QK4hWzKoqHm7JI03hVflTDpVkhq/view?usp=sharing)(Please note, this one performs a little better than the results presented in our publication in general, detailed in our folder example_output, but we decided to respect our published version and didn't make further update in the manuscript.).
@@ -65,9 +67,6 @@ Our example outputs, including data processing, data visualization and model dev
 
 ## Identified images with unwanted white edges
 Identified cropped images with unwanted white backgrounds are stored in folder image_with_white_edge.
-
-## The processed images
-The processed images, ready for the model, can be found [here](https://drive.google.com/file/d/1-l-IX4asVuwokRDvzOCYH5Hyj2_--Lx0/view?usp=sharing).
 
 ## Others
 Other outputs that the authors think might be helpful can be found under folder Others, including the calculated full image size, percentage per 598 by 598 areas for corpped images, pathology info, identified mismatch info in sizewize between ROI and full images.
