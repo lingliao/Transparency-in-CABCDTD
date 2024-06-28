@@ -288,7 +288,7 @@ for epoch in range(num_epochs):
     val_loss = val_running_loss / len(val_loader)
 
     # Print the training and validation results for each epoch
-    print(f"Epoch [{epoch+1}/{num_epochs}], Training Loss: {train_loss:.4f}, Training Accuracy: {train_accuracy:.4f}, Validation Loss: {val_loss:.4f}, Validation Accuracy: {val_accuracy:.4f}")
+    print(f"Epoch [{epoch+1}/{num_epochs}], Training Accuracy: {train_accuracy:.4f}, Validation Accuracy: {val_accuracy:.4f}")
     
     # Save model checkpoints for the last 10 epochs
     if epoch >= num_epochs - 10:
