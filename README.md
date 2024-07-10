@@ -41,6 +41,7 @@ Steps to run the code we provided for model development:
 6. Augmentation.py
 7. pathology.py
 8. model_development_and_evaluation.py (You will want to replace the "model_epoch_37.pth" with your best trained result)
+9. OR, you could directly evaluate our model's performence with model_evaluation.py and our best saved check point "model_epoch_37.pth"
 
 Steps to run the code for Figure 1B and 1C:
 1. make sure you run the first 5 steps of the above lists
