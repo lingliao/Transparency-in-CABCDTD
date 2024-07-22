@@ -1,4 +1,4 @@
-# Transparency in Computer-Aided Breast Cancer Diagnosis Tool Development: A CBIS-DDSM Case Study
+# An Open Codebase Utilizing CBIS-DDSM Dataset to Empower Transparent and Reproducible Breast Cancer Diagnosis
 
 ## Overview
 
