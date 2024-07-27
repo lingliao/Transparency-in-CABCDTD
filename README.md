@@ -1,4 +1,4 @@
-# An Open Codebase for Empowering Transparency and Reproducibility in Machine Learning-Based Breast Cancer Diagnosis Using the CBIS-DDSM Dataset
+# An Open Codebase to Empower Transparency and Reproducibility in Machine Learning-Based Breast Cancer Diagnosis Using the CBIS-DDSM Dataset
 
 ## Overview
 
