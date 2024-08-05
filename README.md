@@ -46,11 +46,9 @@ The processed images, ready for the model, can be found [here](https://drive.goo
 
 The model's performance evaluation is based on the checkpoint with the highest validation accuracy.
 
-The best performed checkpoint can be downloaded from [here](https://drive.google.com/drive/folders/18RxhTm9Oxak1dA0d2xihnHWekmEVug6h?usp=sharing)(Please note, this one performs a little better than the results presented in our publication in general, detailed in our folder example_output, but we decided to respect our published version and didn't make further update in the manuscript.).
+The best performed checkpoint can be downloaded from [here](https://drive.google.com/drive/folders/18RxhTm9Oxak1dA0d2xihnHWekmEVug6h?usp=sharing)
 
 Accuracy, precision, recall, F1 score, and a confusion matrix are outlined in below:
-
-
 <div style="text-align: center;">
   <img width="900" alt="image" src="https://github.com/user-attachments/assets/87756d60-334e-4f53-9e50-9c8ba8ebb928">
 </div>
