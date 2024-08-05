@@ -52,8 +52,9 @@ Accuracy, precision, recall, F1 score, and a confusion matrix are outlined in be
 
 
 <div style="text-align: center;">
-  <img width="468" alt="image" src="https://github.com/user-attachments/assets/bacb0f74-9ef6-48ce-a760-4572a0ebe5b6">
+  <img width="468" alt="image" src="https://github.com/user-attachments/assets/6eae03a6-c25c-4269-bbc4-5dbc35de036e">
 </div>
+
 
 ## Example output
 Our example outputs, including data processing, data visualization and model development and evaluation, are saved in folder example_output.
