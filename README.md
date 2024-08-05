@@ -52,7 +52,7 @@ Accuracy, precision, recall, F1 score, and a confusion matrix are outlined in be
 
 
 <div style="text-align: center;">
-  <img width="970" alt="image" src="<img width="468" alt="image" src="https://github.com/user-attachments/assets/2c97b3a9-f5a9-41a1-9a70-9c0a2564242d">
+  <img width="900" alt="image" src="https://github.com/user-attachments/assets/bacb0f74-9ef6-48ce-a760-4572a0ebe5b6">
 </div>
 
 
