@@ -79,6 +79,14 @@ from sklearn.preprocessing import LabelEncoder
 label_mapping = {'BENIGN': 0, 'BENIGN_WITHOUT_CALLBACK': 0, 'MALIGNANT': 1}
 df['label'] = df['pathology'].map(label_mapping)
 
+# Get the images before augmentation
+def check_filename(filename):
+    basename = os.path.basename(filename)
+    return basename.endswith('1-1.png') or basename.endswith('1-2.png')
+
+# Apply the function to filter rows
+original_df = df[df['File_Paths'].apply(check_filename)]
+
 ###################
 # Build the model #
 ###################
@@ -216,10 +224,32 @@ transform_ = transforms.Compose([
     transforms.Resize((224, 224))  # Ensure the final size is 448x448
 
 ])
-
-# Training, validation, and test spliting
-
 from sklearn.model_selection import train_test_split
+
+# Split the dataset into train and test sets, get all the images for training
+train_data, temp_data = train_test_split(original_df, test_size=0.2)
+# train_data, temp_data = train_test_split(original_df, test_size=0.2, random_state=42)
+# Function to replicate rows and modify File_Paths
+def replicate_rows(df, n_replicates):
+    # Create an empty list to collect new rows
+    new_rows = []
+    
+    # Iterate over each row in the original DataFrame
+    for _, row in df.iterrows():
+        # Add the original row once
+        new_rows.append(row)
+        
+        # Add replicated rows with modified File_Paths
+        for i in range(1, n_replicates + 1):
+            new_row = row.copy()
+            new_row['File_Paths'] = new_row['File_Paths'].replace('.png', f'_{i}.png')
+            new_rows.append(new_row)
+    
+    # Convert list of rows to DataFrame
+    return pd.DataFrame(new_rows)
+
+# Replicate each row 5 times with modified File_Paths
+train_data_augmented = replicate_rows(train_data, 5)
 
 # Split the train set into train and validation sets
 val_data, test_data = train_test_split(temp_data, test_size=1/2)
