@@ -2,7 +2,8 @@
 
 ## Overview
 
-Our methodology outlined in this case study demonstrates robust performance in classifying benign and malignant breast mammography images, achieving an AUROC of 86.3% [95% CI: 0.842, 0.885] using the CBIS-DDSM mass dataset. We further humbly provide all the code we employed for the entire process, spanning from data preprocessing to model evaluation.
+we provided a pilot codebase covering the entire  process from image preprocessing to model development and evaluation pipeline, utilizing the publicly available Curated Breast Imaging Subset of Digital Database for Screening Mammography (CBIS-DDSM) mass subset, including both full images and regions of interests (ROIs). We identified that increasing the input size improves correctly detection of malignant cases, while results for benign cases remains relatively stable across sizes within each set of models.
+
 
 Below conatins the overview of the application of the CBIS-DDSM mass subset for breast cancer diagnosis:
 
@@ -21,7 +22,7 @@ Full image size and the cropped area per 598 by 598 pixels are plotted as below:
 </div>
 
 ## Methods
-In general, our methods include: 1) converting DICOM to PNG format without altering bit depth, 2) mapping ROIs to corresponding full images to identify and crop abnormal areas while ensuring size congruence, 3) confirming sufficient crop size coverage for most abnormal regions, 4) appending cropped images to the desired **598 × 598** pixels with centered abnormal areas and removal of unwanted backgrounds, 5) performing data augmentation for enhanced diversity, 6) processing and splitting images into training, validation, and testing sets for model development, 7) optimizing computational efficient Xception network for model development, and 8) assessing effectiveness using multiple matrices and visualizations.
+In general, our methods include: 1) converting DICOM to PNG format without altering bit depth, 2) mapping ROIs to corresponding full images to identify and crop abnormal areas while ensuring size congruence, 3) confirming sufficient crop size coverage for most abnormal regions, 4) appending cropped images to the preliminary target **598 × 598** pixels with centered abnormal areas and removal of unwanted backgrounds, 5) performing data augmentation for enhanced diversity, 6) processing and splitting images into training, validation, and testing sets for model development, 7) optimizing computational efficient Xception network for model development, and 8) assessing effectiveness using multiple matrices and visualizations.
 
 Steps to run the code we provided for model development:
 
@@ -47,11 +48,11 @@ The model's performance evaluation is based on the checkpoint with the highest v
 
 The best performed checkpoint can be downloaded from [here](https://drive.google.com/file/d/1S09j6QK4hWzKoqHm7JI03hVflTDpVkhq/view?usp=sharing)(Please note, this one performs a little better than the results presented in our publication in general, detailed in our folder example_output, but we decided to respect our published version and didn't make further update in the manuscript.).
 
-Accuracy, precision, recall, F1 score, ROC curve, and a confusion matrix are outlined in below:
+Accuracy, precision, recall, F1 score, and a confusion matrix are outlined in below:
 
 
 <div style="text-align: center;">
-  <img width="970" alt="image" src="https://github.com/lingliao/Transparency-in-CABCDTD/assets/91222367/447270ad-168a-4e0f-8a6a-eb9ad52fc4ba">
+  <img width="970" alt="image" src="<img width="468" alt="image" src="https://github.com/user-attachments/assets/2c97b3a9-f5a9-41a1-9a70-9c0a2564242d">
 </div>
 
 
