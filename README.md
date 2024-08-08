@@ -50,7 +50,7 @@ The best performed checkpoint can be downloaded from [here](https://drive.google
 
 Accuracy, precision, recall, F1 score, and a confusion matrix are outlined in below:
 <div style="text-align: center;">
-  <img width="900" alt="image" src="https://github.com/user-attachments/assets/87756d60-334e-4f53-9e50-9c8ba8ebb928">
+  <img width="900" alt="image" src="https://github.com/user-attachments/assets/57db4ea3-807b-4bbf-a799-e213be14a230">
 </div>
 
 
