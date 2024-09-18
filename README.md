@@ -5,7 +5,7 @@
 we provided a pilot codebase covering the entire  process from image preprocessing to model development and evaluation, utilizing the publicly available Curated Breast Imaging Subset of Digital Database for Screening Mammography (CBIS-DDSM) mass subset, including both full images and regions of interests (ROIs). We identified that increasing the input size improves correctly detection of malignant cases, while results for benign cases remains relatively stable across sizes within each set of models.
 
 
-Below conatins the overview of the application of the CBIS-DDSM mass subset for breast cancer diagnosis:
+Below conatins the overview of appling the CBIS-DDSM mass subset for breast cancer diagnosis:
 
 <div style="text-align: center;">
   <img width="970" alt="image" src="https://github.com/lingliao/Transparency-in-CABCDTD/assets/91222367/93f7aa76-4a39-4534-be60-ba14a795155f">
