@@ -1,4 +1,4 @@
-# An Open Codebase to Enhance Reliability in Deep Learning-Based Breast Cancer Diagnosis
+# An open codebase for enhancing transparency in deep learning-based breast cancer diagnosis utilizing CBIS-DDSM data
 
 ## Overview
 
