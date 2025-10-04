@@ -44,8 +44,6 @@ Steps to run the code for Figure 1B and 1C:
 3. R_visualization.R
 
 ## Results
-The processed images, ready for the model, can be found [here](https://drive.google.com/file/d/1-l-IX4asVuwokRDvzOCYH5Hyj2_--Lx0/view?usp=sharing).
-
 The model's performance evaluation is based on the checkpoint with the highest validation accuracy.
 
 The best performed checkpoint can be downloaded from [here](https://drive.google.com/drive/folders/18RxhTm9Oxak1dA0d2xihnHWekmEVug6h?usp=sharing)
